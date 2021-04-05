@@ -2,6 +2,7 @@ import { Component, OnInit, VERSION } from "@angular/core";
 import { Observable } from "rxjs";
 import { AppService } from "./app.service";
 import { Post } from "./post";
+import topstories from "./topstories.json";
 
 @Component({
   selector: "my-app",
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
+    //this.posts = topstories;
     this.appService.getPosts().subscribe(
       data => {
         this.posts = data;

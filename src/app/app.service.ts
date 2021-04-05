@@ -30,6 +30,9 @@ export class AppService {
   }
 
   getPosts(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/topstories.json?print=pretty`);
+    //console.log(this.http.get("./topstories.json"));
+    //return this.http.get(`${this.baseUrl}/topstories.json?print=pretty`);
+    return this.http.get("./assets/topstories.json", { responseType: "json" });
+    //return this.http.get(`/topstories.json`);
   }
 }
